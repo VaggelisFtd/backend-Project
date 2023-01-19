@@ -14,14 +14,12 @@ public class User implements Serializable {
     private String Username;
     private String Password;
     private String Email;
-    private String newEntry;
 
-    public User(Long userID, String username, String password, String email, String newEntry) {
+    public User(Long userID, String username, String password, String email) {
         this.UserID = userID;
         this.Username = username;
         this.Password = password;
         this.Email = email;
-        this.newEntry = newEntry;
     }
 
     public User() {
@@ -60,11 +58,4 @@ public class User implements Serializable {
         Email = email;
     }
 
-    public String getNewEntry() {
-        return newEntry;
-    }
-
-    public void setNewEntry(String newEntry) {
-        this.newEntry = newEntry;
-    }
 }

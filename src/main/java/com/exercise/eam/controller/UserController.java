@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/User")
 
 public class UserController
 {
@@ -19,33 +19,22 @@ public class UserController
         this.userService = userService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/All")
     public ResponseEntity<List<User>> getAllUsers () {
-        List<User> employees = userService.findAllUsers();
-        return new ResponseEntity<>(employees, HttpStatus.OK);
+        List<User> users = userService.findAllUsers();
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-//    @GetMapping("/find/{id}")
-//    public ResponseEntity<Employee> getEmployeeById (@PathVariable("id") Long id) {
-//        Employee employee = employeeService.findEmployeeById(id);
-//        return new ResponseEntity<>(employee, HttpStatus.OK);
-//    }
-
-    @PostMapping("/add")
-    public ResponseEntity<User> addEmployee(@RequestBody User user) {
+    @PostMapping("/Add")
+    public ResponseEntity<User> addUser(@RequestBody User user) {
        User newUser = userService.addUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<User> updateEmployee(@RequestBody User user) {
+    @PutMapping("/Update")
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
         User updateUser = userService.updateUser(user);
         return new ResponseEntity<>(updateUser, HttpStatus.OK);
     }
-//
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {
-//        employeeService.deleteEmployee(id);
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
+
 }

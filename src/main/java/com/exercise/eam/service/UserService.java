@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
+import java.util.Random;
 
 @Service
 public class UserService {
-   private final UserRepo userRepo;
+    Random rand = new Random();
+    private final UserRepo userRepo;
 
     @Autowired
     public UserService(UserRepo userRepo) {
@@ -18,7 +19,7 @@ public class UserService {
     }
 
     public User addUser(User user) {
-        user.setNewEntry(UUID.randomUUID().toString());
+        user.setUserID(rand.nextLong());
         return userRepo.save(user);
     }
 
@@ -26,9 +27,7 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public User updateUser(User user) {
-        return userRepo.save(user);
-    }
+    public User updateUser(User user) {return userRepo.save(user);}
 
 //    public User findUserById(Long UserID)  {
 //        return userRepo.findUserById(UserID)
