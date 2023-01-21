@@ -6,30 +6,31 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Internship")
+@Table(name = "Internship")
 public class Internship {
     @Id
     @Column(nullable = false, updatable = false)
     private Long InternshipID;
-    private String DeptName;
-    private String Duration;
-    private String JobType;
-    private String StartingDate;
+
+    //on display in search position
     private String Title;
+    private String DeptName;
+    private boolean Duration;
+    private boolean JobType;
+    private String StartDate;
+    private String JobDescription;
     private int Salary;
-    private String Profession;
     private String Status;
 
-
-    public Internship(Long internshipID, String deptName, String duration, String jobType, String startingDate, String title, int salary, String profession, String status) {
+    public Internship(Long internshipID, String title, String deptName, boolean duration, boolean jobType, String startDate, String jobDescription, int salary, String status) {
         InternshipID = internshipID;
+        Title = title;
         DeptName = deptName;
         Duration = duration;
         JobType = jobType;
-        StartingDate = startingDate;
-        Title = title;
+        StartDate = startDate;
+        JobDescription = jobDescription;
         Salary = salary;
-        Profession = profession;
         Status = status;
     }
 
@@ -45,38 +46,6 @@ public class Internship {
         InternshipID = internshipID;
     }
 
-    public String getDeptName() {
-        return DeptName;
-    }
-
-    public void setDeptName(String deptName) {
-        DeptName = deptName;
-    }
-
-    public String getDuration() {
-        return Duration;
-    }
-
-    public void setDuration(String duration) {
-        Duration = duration;
-    }
-
-    public String getJobType() {
-        return JobType;
-    }
-
-    public void setJobType(String jobType) {
-        JobType = jobType;
-    }
-
-    public String getStartingDate() {
-        return StartingDate;
-    }
-
-    public void setStartingDate(String startingDate) {
-        StartingDate = startingDate;
-    }
-
     public String getTitle() {
         return Title;
     }
@@ -85,20 +54,38 @@ public class Internship {
         Title = title;
     }
 
-    public int getSalary() {
-        return Salary;
+    public String getDeptName() {
+        return DeptName;
     }
+
+    public void setDeptName(String deptName) {
+        DeptName = deptName;
+    }
+
+    public boolean isDuration() {return Duration;}
+
+    public void setDuration(boolean duration) {Duration = duration;}
+
+    public boolean isJobType() {
+        return JobType;
+    }
+
+    public void setJobType(boolean jobType) {
+        JobType = jobType;
+    }
+
+    public String getStartDate() {
+        return StartDate;
+    }
+
+    public void setStartDate(String startDate) {
+        StartDate = startDate;
+    }
+
+    public int getSalary() {return Salary;}
 
     public void setSalary(int salary) {
         Salary = salary;
-    }
-
-    public String getProfession() {
-        return Profession;
-    }
-
-    public void setProfession(String profession) {
-        Profession = profession;
     }
 
     public String getStatus() {
@@ -107,5 +94,13 @@ public class Internship {
 
     public void setStatus(String status) {
         Status = status;
+    }
+
+    public String getJobDescription() {
+        return JobDescription;
+    }
+
+    public void setJobDescription(String jobDescription) {
+        JobDescription = jobDescription;
     }
 }
