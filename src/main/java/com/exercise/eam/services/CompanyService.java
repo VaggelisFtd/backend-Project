@@ -1,6 +1,6 @@
-package com.exercise.eam.service;
+package com.exercise.eam.services;
 
-import com.exercise.eam.model.Company;
+import com.exercise.eam.models.Company;
 import com.exercise.eam.repo.CompanyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,9 +25,5 @@ public class CompanyService {
 
     public List<Company> findAllCompanies() {
         return companyRepo.findAll();
-    }
-
-    public Company updateCompany(Company company) {
-        return companyRepo.save(company);
     }
 }

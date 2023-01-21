@@ -1,7 +1,7 @@
-package com.exercise.eam.controller;
+package com.exercise.eam.controllers;
 
-import com.exercise.eam.model.User;
-import com.exercise.eam.service.UserService;
+import com.exercise.eam.models.User;
+import com.exercise.eam.services.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class UserController
     }
 
     @GetMapping("/All")
-    public ResponseEntity<List<User>> getAllUsers () {
+    public ResponseEntity< List<User> > getAllUsers () {
         List<User> users = userService.findAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
@@ -30,11 +30,4 @@ public class UserController
        User newUser = userService.addUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
-
-    @PutMapping("/Update")
-    public ResponseEntity<User> updateUser(@RequestBody User user) {
-        User updateUser = userService.updateUser(user);
-        return new ResponseEntity<>(updateUser, HttpStatus.OK);
-    }
-
-}
+  }

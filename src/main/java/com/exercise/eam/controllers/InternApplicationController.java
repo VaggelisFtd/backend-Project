@@ -1,7 +1,7 @@
-package com.exercise.eam.controller;
+package com.exercise.eam.controllers;
 
-import com.exercise.eam.model.InternApplication;
-import com.exercise.eam.service.InternApplicationService;
+import com.exercise.eam.models.InternApplication;
+import com.exercise.eam.services.InternApplicationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,11 +31,4 @@ public class InternApplicationController
         InternApplication newInternApplication= internApplicationService.addInternApplication(internApplication);
         return new ResponseEntity<>(newInternApplication, HttpStatus.CREATED);
     }
-
-    @PutMapping("/Update")
-    public ResponseEntity<InternApplication> updateInternApplication(@RequestBody InternApplication internApplication) {
-        InternApplication updateInternApplication =internApplicationService.updateInternApplication(internApplication);
-        return new ResponseEntity<>(updateInternApplication, HttpStatus.OK);
-    }
-
 }

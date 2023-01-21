@@ -1,6 +1,6 @@
-package com.exercise.eam.service;
+package com.exercise.eam.services;
 
-import com.exercise.eam.model.User;
+import com.exercise.eam.models.User;
 import com.exercise.eam.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,21 +22,8 @@ public class UserService {
         user.setUserID(rand.nextLong());
         return userRepo.save(user);
     }
-
     public List<User> findAllUsers() {
         return userRepo.findAll();
     }
 
-    public User updateUser(User user) {return userRepo.save(user);}
-
-//    public User findUserById(Long UserID)  {
-//        return userRepo.findUserById(UserID)
-//                .orElseThrow(()-> new UserNotFoundException("User by id "+UserID +" not found"));
-//    }
-////    public void deleteUser(User user) {
-////        userRepo.delete(user);
-////    }
-//    public void deleteUserById(Long UserID) {
-//        userRepo.deleteById(UserID);
-//    }
 }

@@ -1,7 +1,7 @@
-package com.exercise.eam.controller;
+package com.exercise.eam.controllers;
 
-import com.exercise.eam.model.Student;
-import com.exercise.eam.service.StudentService;
+import com.exercise.eam.models.Student;
+import com.exercise.eam.services.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,11 +31,4 @@ public class StudentController
         Student newStudent = studentService.addStudent(student);
         return new ResponseEntity<>(newStudent, HttpStatus.CREATED);
     }
-
-    @PutMapping("/Update")
-    public ResponseEntity<Student> updateStudent(@RequestBody Student student) {
-        Student updateStudent = studentService.updateStudent(student);
-        return new ResponseEntity<>(updateStudent, HttpStatus.OK);
-    }
-
 }

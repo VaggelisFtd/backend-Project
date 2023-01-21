@@ -1,7 +1,7 @@
-package com.exercise.eam.controller;
+package com.exercise.eam.controllers;
 
-import com.exercise.eam.model.Company;
-import com.exercise.eam.service.CompanyService;
+import com.exercise.eam.models.Company;
+import com.exercise.eam.services.CompanyService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,11 +30,4 @@ public class CompanyController
         Company newCompany = companyService.addCompany(company);
         return new ResponseEntity<>(newCompany, HttpStatus.CREATED);
     }
-
-    @PutMapping("/Update")
-    public ResponseEntity<Company> updateCompany(@RequestBody Company company) {
-        Company updateCompany = companyService.updateCompany(company);
-        return new ResponseEntity<>(updateCompany, HttpStatus.OK);
-    }
-
 }

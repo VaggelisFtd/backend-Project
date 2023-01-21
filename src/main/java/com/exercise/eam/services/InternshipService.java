@@ -1,6 +1,6 @@
-package com.exercise.eam.service;
+package com.exercise.eam.services;
 
-import com.exercise.eam.model.Internship;
+import com.exercise.eam.models.Internship;
 import com.exercise.eam.repo.InternshipRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

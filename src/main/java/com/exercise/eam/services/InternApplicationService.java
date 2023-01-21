@@ -1,6 +1,6 @@
-package com.exercise.eam.service;
+package com.exercise.eam.services;
 
-import com.exercise.eam.model.InternApplication;
+import com.exercise.eam.models.InternApplication;
 import com.exercise.eam.repo.InternApplicationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +17,11 @@ public class InternApplicationService {
     public InternApplicationService(InternApplicationRepo internApplicationRepo) {
         this.internApplicationRepo = internApplicationRepo;
     }
-
     public InternApplication addInternApplication(InternApplication internApplication) {
         internApplication.setApplicationID(rand.nextLong());
         return internApplicationRepo.save(internApplication);
     }
-
     public List<InternApplication> findAllInternApplications() {
         return internApplicationRepo.findAll();
-    }
-
-    public InternApplication updateInternApplication(InternApplication internApplication) {
-        return internApplicationRepo.save(internApplication);
     }
 }

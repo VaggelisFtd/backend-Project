@@ -1,4 +1,4 @@
-package com.exercise.eam.model;
+package com.exercise.eam.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,9 +20,8 @@ public class Internship {
     private String StartDate;
     private String JobDescription;
     private int Salary;
-    private String Status;
 
-    public Internship(Long internshipID, String title, String deptName, boolean duration, boolean jobType, String startDate, String jobDescription, int salary, String status) {
+    public Internship(Long internshipID, String title, String deptName, boolean duration, boolean jobType, String startDate, String jobDescription, int salary) {
         InternshipID = internshipID;
         Title = title;
         DeptName = deptName;
@@ -31,7 +30,6 @@ public class Internship {
         StartDate = startDate;
         JobDescription = jobDescription;
         Salary = salary;
-        Status = status;
     }
 
     public Internship() {
@@ -86,14 +84,6 @@ public class Internship {
 
     public void setSalary(int salary) {
         Salary = salary;
-    }
-
-    public String getStatus() {
-        return Status;
-    }
-
-    public void setStatus(String status) {
-        Status = status;
     }
 
     public String getJobDescription() {

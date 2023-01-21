@@ -1,4 +1,4 @@
-package com.exercise.eam.model;
+package com.exercise.eam.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

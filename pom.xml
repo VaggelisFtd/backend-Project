@@ -12,6 +12,7 @@
 	<artifactId>eam</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eam</name>
+	<packaging>war</packaging>
 	<description>School Project</description>
 	<properties>
 		<java.version>17</java.version>

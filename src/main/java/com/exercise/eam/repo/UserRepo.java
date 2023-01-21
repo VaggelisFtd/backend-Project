@@ -1,6 +1,6 @@
 package com.exercise.eam.repo;
 
-import com.exercise.eam.model.User;
+import com.exercise.eam.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepo extends JpaRepository<User, Long> {

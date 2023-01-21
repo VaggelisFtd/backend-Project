@@ -1,6 +1,6 @@
-package com.exercise.eam.service;
+package com.exercise.eam.services;
 
-import com.exercise.eam.model.Student;
+import com.exercise.eam.models.Student;
 import com.exercise.eam.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,9 +26,5 @@ public class StudentService {
 
     public List<Student> findAllStudents() {
         return studentRepo.findAll();
-    }
-
-    public Student updateStudent(Student student) {
-        return studentRepo.save(student);
     }
 }
