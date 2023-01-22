@@ -15,18 +15,21 @@ public class Student {
     private String Location;
     private String University;
     private int PhoneNumber;
+    private String Username;
+
     @OneToOne
     private User User;
     @OneToMany
     private List<InternApplication> InternApplication;
 
-    public Student(Long studentID, String firstName, String lastName, String location, String university, int phoneNumber) {
+    public Student(Long studentID, String firstName, String lastName, String location, String university, int phoneNumber, String username) {
         StudentID = studentID;
         FirstName = firstName;
         LastName = lastName;
         Location = location;
         University = university;
         PhoneNumber = phoneNumber;
+        Username = username;
     }
 
     public Student() {
@@ -81,4 +84,11 @@ public class Student {
         PhoneNumber = phoneNumber;
     }
 
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
+    }
 }

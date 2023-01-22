@@ -14,7 +14,6 @@ public class User implements Serializable {
     private String Username;
     private String Password;
     private String Email;
-
     private int roleInSite;
     @OneToOne
     private Student Student;
@@ -30,8 +29,9 @@ public class User implements Serializable {
         this.roleInSite = roleInSite;
     }
 
-    public User() {
+    public User(String username) {
 
+        this.Username = username;
     }
 
     public Long getUserID() {
