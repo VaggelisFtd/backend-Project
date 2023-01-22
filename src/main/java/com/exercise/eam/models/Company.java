@@ -16,20 +16,18 @@ public class Company implements Serializable {
     private int PhoneNumber;
     private String Location;
 
-    private String Username;
     @OneToOne
     private User User;
 
     @OneToMany
     private List<Internship>Internship;
 
-    public Company(Long AFM, String companyName, String expertise, int phoneNumber, String location, String username) {
+    public Company(Long AFM, String companyName, String expertise, int phoneNumber, String location) {
         this.AFM = AFM;
         CompanyName = companyName;
         Expertise = expertise;
         PhoneNumber = phoneNumber;
         Location = location;
-        Username = username;
     }
 
     public Company() {
@@ -76,11 +74,5 @@ public class Company implements Serializable {
         Location = location;
     }
 
-    public String getUsername() {
-        return Username;
-    }
 
-    public void setUsername(String username) {
-        Username = username;
-    }
 }
