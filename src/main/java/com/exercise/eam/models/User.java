@@ -29,10 +29,10 @@ public class User implements Serializable {
         this.roleInSite = roleInSite;
     }
 
-    public User(String username) {
+    public User() {
 
-        this.Username = username;
     }
+
 
     public Long getUserID() {
         return UserID;
