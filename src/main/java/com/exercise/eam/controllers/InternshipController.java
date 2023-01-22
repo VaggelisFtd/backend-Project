@@ -25,10 +25,14 @@ public class InternshipController
         return new ResponseEntity<>(internships, HttpStatus.OK);
     }
 
-
     @PostMapping("/Add")
     public ResponseEntity<Internship> addInternship(@RequestBody Internship internship) {
         Internship newInternship = internshipService.addInternship(internship);
         return new ResponseEntity<>(newInternship, HttpStatus.CREATED);
+    }
+    @GetMapping("/Find/{id}")
+    public ResponseEntity<Internship> getInternshipById (@PathVariable("id") Long id) {
+        Internship internship = internshipService.findById(id);
+        return new ResponseEntity<>(internship, HttpStatus.OK);
     }
 }

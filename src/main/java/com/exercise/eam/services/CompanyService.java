@@ -31,6 +31,6 @@ public class CompanyService {
     public Company findById(Long CompanyId)
     {
         return companyRepo.findById(CompanyId)
-                .orElseThrow(() -> new notFoundException("Application by id " + CompanyId + " was not found"));
+                .orElseThrow(() -> new notFoundException("Company by id " + CompanyId + " was not found"));
     }
 }
