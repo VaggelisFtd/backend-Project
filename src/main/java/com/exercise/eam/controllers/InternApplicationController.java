@@ -25,6 +25,11 @@ public class InternApplicationController
         return new ResponseEntity<>(internApplications, HttpStatus.OK);
     }
 
+    @GetMapping("/Find/{id}")
+    public ResponseEntity<InternApplication> getApplicationById (@PathVariable("id") Long id) {
+        InternApplication internApplication = internApplicationService.findById(id);
+        return new ResponseEntity<>(internApplication, HttpStatus.OK);
+    }
 
     @PostMapping("/Add")
     public ResponseEntity<InternApplication> addInternApplication(@RequestBody InternApplication internApplication) {
@@ -36,4 +41,5 @@ public class InternApplicationController
        InternApplication updateApplication = internApplicationService.updateApplication(internApplication);
         return new ResponseEntity<>(updateApplication, HttpStatus.OK);
     }
+
 }

@@ -30,4 +30,9 @@ public class CompanyController
         Company newCompany = companyService.addCompany(company);
         return new ResponseEntity<>(newCompany, HttpStatus.CREATED);
     }
+    @GetMapping("/Find/{id}")
+    public ResponseEntity<Company> getCompanyById (@PathVariable("id") Long id) {
+        Company company = companyService.findById(id);
+        return new ResponseEntity<>(company, HttpStatus.OK);
+    }
 }

@@ -1,5 +1,6 @@
 package com.exercise.eam.services;
 
+import com.exercise.eam.exception.notFoundException;
 import com.exercise.eam.models.Company;
 import com.exercise.eam.repo.CompanyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,11 @@ public class CompanyService {
 
     public List<Company> findAllCompanies() {
         return companyRepo.findAll();
+    }
+
+    public Company findById(Long CompanyId)
+    {
+        return companyRepo.findById(CompanyId)
+                .orElseThrow(() -> new notFoundException("Application by id " + CompanyId + " was not found"));
     }
 }
