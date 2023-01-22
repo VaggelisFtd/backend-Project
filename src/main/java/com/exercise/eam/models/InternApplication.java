@@ -17,6 +17,8 @@ public class InternApplication {
     @ManyToOne
     private Student Student;
 
+    @ManyToOne
+    private Internship internship;
     public InternApplication(Long applicationID, String grades, String description, int saveStatus, int appliedStatus) {
         ApplicationID = applicationID;
         Grades = grades;

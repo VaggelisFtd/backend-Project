@@ -2,6 +2,8 @@ package com.exercise.eam.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Internship")
 public class Internship {
@@ -19,6 +21,8 @@ public class Internship {
     private int Salary;
     @ManyToOne
     private Company Company;
+    @OneToMany
+    private List<InternApplication> internApplication;
 
     public Internship(Long internshipID, String title, String deptName, boolean duration, boolean jobType, String startDate, String jobDescription, int salary) {
         InternshipID = internshipID;
