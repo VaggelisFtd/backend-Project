@@ -24,4 +24,8 @@ public class InternApplicationService {
     public List<InternApplication> findAllInternApplications() {
         return internApplicationRepo.findAll();
     }
+
+    public InternApplication updateApplication(InternApplication internApplication) {
+        return internApplicationRepo.save(internApplication);
+    }
 }

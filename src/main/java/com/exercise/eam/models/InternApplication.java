@@ -1,9 +1,6 @@
 package com.exercise.eam.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="InternApplication")
@@ -16,6 +13,9 @@ public class InternApplication {
     private int saveStatus;
     private int appliedStatus;
 //    private boolean isDeleted;
+
+    @ManyToOne
+    private Student Student;
 
     public InternApplication(Long applicationID, String grades, String description, int saveStatus, int appliedStatus) {
         ApplicationID = applicationID;

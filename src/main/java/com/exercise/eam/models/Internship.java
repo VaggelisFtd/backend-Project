@@ -1,9 +1,6 @@
 package com.exercise.eam.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Internship")
@@ -20,6 +17,8 @@ public class Internship {
     private String StartDate;
     private String JobDescription;
     private int Salary;
+    @ManyToOne
+    private Company Company;
 
     public Internship(Long internshipID, String title, String deptName, boolean duration, boolean jobType, String startDate, String jobDescription, int salary) {
         InternshipID = internshipID;

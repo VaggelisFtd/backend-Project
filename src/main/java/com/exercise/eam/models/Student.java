@@ -1,9 +1,8 @@
 package com.exercise.eam.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="Student")
@@ -16,6 +15,10 @@ public class Student {
     private String Location;
     private String University;
     private int PhoneNumber;
+    @OneToOne
+    private User User;
+    @OneToMany
+    private List<InternApplication> InternApplication;
 
     public Student(Long studentID, String firstName, String lastName, String location, String university, int phoneNumber) {
         StudentID = studentID;
@@ -77,4 +80,5 @@ public class Student {
     public void setPhoneNumber(int phoneNumber) {
         PhoneNumber = phoneNumber;
     }
+
 }

@@ -15,11 +15,19 @@ public class User implements Serializable {
     private String Password;
     private String Email;
 
-    public User(Long userID, String username, String password, String email) {
+    private int roleInSite;
+    @OneToOne
+    private Student Student;
+
+    @OneToOne
+    private Company Company;
+
+    public User(Long userID, String username, String password, String email, int roleInSite) {
         this.UserID = userID;
         this.Username = username;
         this.Password = password;
         this.Email = email;
+        this.roleInSite = roleInSite;
     }
 
     public User() {
@@ -58,4 +66,11 @@ public class User implements Serializable {
         Email = email;
     }
 
+    public int getRoleInSite() {
+        return roleInSite;
+    }
+
+    public void setRoleInSite(int roleInSite) {
+        this.roleInSite = roleInSite;
+    }
 }

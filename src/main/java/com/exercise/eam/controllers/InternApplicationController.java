@@ -31,4 +31,9 @@ public class InternApplicationController
         InternApplication newInternApplication= internApplicationService.addInternApplication(internApplication);
         return new ResponseEntity<>(newInternApplication, HttpStatus.CREATED);
     }
+    @PutMapping("/Update")
+    public ResponseEntity<InternApplication> updateInternApplication(@RequestBody InternApplication internApplication) {
+       InternApplication updateApplication = internApplicationService.updateApplication(internApplication);
+        return new ResponseEntity<>(updateApplication, HttpStatus.OK);
+    }
 }

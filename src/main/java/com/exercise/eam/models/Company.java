@@ -1,11 +1,9 @@
 package com.exercise.eam.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="Company")
@@ -17,6 +15,12 @@ public class Company implements Serializable {
     private String Expertise;
     private int PhoneNumber;
     private String Location;
+
+    @OneToOne
+    private User User;
+
+    @OneToMany
+    private List<Internship>Internship;
 
     public Company(Long AFM, String companyName, String expertise, int phoneNumber, String location) {
         this.AFM = AFM;
